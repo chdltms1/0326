@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        #myVideo{
+
+            position: absolute;
+            left: 300px;
+            top: 300px;
+            border:1px solid red;
+
+            opacity:1;
+            transform:scale(2,2)
+        }
+
+       
+
+    </style>
+    
+    <script>
+        var  f= 1;
+        function playMovie(){
+            var myVideo = document.getElementById("myVideo");
+            myVideo.play();
+        }
+
+        function pauseMovie(){
+            var myVideo = document.getElementById("myVideo");
+            myVideo.pause();
+        }
+
+        function fadeOut(){
+            f -=0.1;
+            var myVideo = document.getElementById("myVideo");
+            myVideo.style.opacity  = f;
+        }
+    
+
+    </script>
+
+</head>
+<body>
+    <button onClick="playMovie()">재생하기</button>
+    <button onclick="pauseMovie()">정지하기</button>
+    <button onclick="fadeOut()">Fadeout하기</button>
+    <button onclick="setScale()">크기설졍(비율)</button>
+    <video id= "myVideo" width="320" height="240" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        
+      
+      </video>
+</body>
+</html>

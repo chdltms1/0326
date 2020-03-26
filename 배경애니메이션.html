@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        /* 
+        
+        1)스타일 시트는 프로그래밍 언어가 아니라 
+            문서의 디자인을 보완하는 기술이다.
+        2) 스타일 문법형식(syntax)
+            누구(선택자)를 어떻게 할지(속성)..
+            예) img(선택자){
+                widows: 100px;(속성)
+                }
+            선택자의 표현방식은 다양하다..
+            예 ) #pic : 문서내에 pic이라는 아이디를 갖는 요소를 지칭
+            table : 문서내에 table태그를 지칭
+            .test : 문서내에 test라는 이름을 갖는 클래스 지칭
+            
+            */
+                
+                #gear{
+
+                    position: absolute;
+                    left: 200px;
+                    top: 200px;
+                }
+            body{ 
+                margin: 0px;
+                
+            
+            }
+            div{
+               
+               
+                background-image: url("../images/game_bg.jpg");
+                background-repeat: repeat-x;
+                background-position: 0px 0px ;
+                height: 640px;
+            
+            }
+    </style>
+   <script>
+    var x = 0
+    var r = 0
+   function moveBg(){
+       
+       x-=1
+      var bg=  document.getElementById("bg");
+      bg.style.backgroundPosition=x+"px 0px";
+      
+      r+=20;
+      var gear = document.getElementById("gear");
+      gear.style. transform= "rotate("+r+"deg)";
+
+   }
+   function moveBgAT(){
+       
+
+       setInterval("moveBg()", 10);
+       
+   }
+</script>
+</head>
+<body >
+    
+    <button  onclick="moveBgAT()">게임 스타트</button>
+
+    <div id ="bg">
+    
+            
+    </div>
+    <img src="../images/04.png" id="gear"/>
+</body>
+</html>
